@@ -2,19 +2,29 @@
     <div>
         <Head headname="주문화면" />
         <OrderList />
+        <OrderDate />
+        <OrderAddress />
+        <OrderRequest />
     </div>
 </template>
 
 <script>
     import {
         Head,
-        OrderList
+        OrderList,
+        OrderItemList,
+        OrderDate,
+        OrderAddress,
+        OrderRequest
     } from '../Component'
     export default {
         name: 'Order',
         components: {
             Head,
-            OrderList
+            OrderList,
+            OrderDate,
+            OrderAddress,
+            OrderRequest
         }
     }
 </script>

@@ -8,35 +8,18 @@
                 </router-link>
             </div>
         </div>
-        <OrderItemList />
-        <div >
-
-        </div>
-        
+        <OrderItemList />        
     </div>
 </template>
 
 <script>
-    import {
-        OrderItemList
-    } from '../Component';
+    import OrderItemList from './OrderItemList.vue';
     var baseurl = "http://freshntech.cafe24.com";
     export default {
         name: "OrderList",
         components: {
             OrderItemList
-        },
-        data () {
-            return {
-                
-            }
-        },
-        methods: {
-            
-        },
-        created() {
-            
-        },
+        }
     }
 </script>
 
