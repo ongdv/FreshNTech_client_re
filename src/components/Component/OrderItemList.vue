@@ -57,9 +57,9 @@
                     this.store.state.userAddress = res.data.userAddress;
                     this.store.state.orderList = res.data.customerItemList;
                     this.store.state.orderList.forEach(element => {
-                    element.qty = 1;
-                    this.getTotalQty();
-                    this.getTotalPrice();
+                        element.qty = 1;
+                        this.getTotalQty();
+                        this.getTotalPrice();
                     });
                 })
                 .catch((err) => {
@@ -117,6 +117,8 @@
         },
         created() {
             this.getFavorite();
+            this.getTotalQty();
+            this.getTotalPrice();
         }
     }
 </script>

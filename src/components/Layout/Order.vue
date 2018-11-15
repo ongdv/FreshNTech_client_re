@@ -5,6 +5,8 @@
         <OrderDate />
         <OrderAddress />
         <OrderRequest />
+        
+        <OrderSubmit />
     </div>
 </template>
 
@@ -15,7 +17,9 @@
         OrderItemList,
         OrderDate,
         OrderAddress,
-        OrderRequest
+        OrderRequest,
+        OrderPayment,
+        OrderSubmit
     } from '../Component'
     export default {
         name: 'Order',
@@ -24,7 +28,9 @@
             OrderList,
             OrderDate,
             OrderAddress,
-            OrderRequest
+            OrderRequest,
+            OrderPayment,
+            OrderSubmit
         }
     }
 </script>

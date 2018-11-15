@@ -20,7 +20,8 @@ const store = new Vuex.Store({
         orderQty: 0,
         deliveryDate: d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate(),
         userAddress: '',
-        orderRequest: '배송 및 상품에 대한 추가 요청사항 입력'
+        orderRequest: '배송 및 상품에 대한 추가 요청사항 입력',
+        goodsList: [],
     }
 })
 

@@ -4,11 +4,11 @@
             <b-list-group class="border-0">
                 <b-list-group-item class="border-0 bg-light">
                     <span>
-                        <span style="font-size: 1.2em;font-weight:bold;">
+                        <span style="font-size: 1.1em;font-weight:bold;">
                             배송요청일
                         </span>
                         <br>
-                        <span style="font-size: 1.3em;color:#18A384;">
+                        <span style="font-size: 1.2em;color:#18A384;">
                             {{deliveryDate}}
                         </span>
                     </span>
