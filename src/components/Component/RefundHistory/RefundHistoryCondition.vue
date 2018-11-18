@@ -10,15 +10,9 @@
                                     <option value="365">지난 1년</option>
                                 </select>
                                 <select class="form-control" style="width:45%;display:inline-block;" v-model="condition">
-                                    <option value="전체">전체상태</option>
-                                    <option value="배송준비">배송준비</option>
-                                    <option value="배송중">배송중</option>
-                                    <option value="배송완료">배송완료</option>
-                                    <option value="주문접수">주문접수</option>
-                                    <option value="주문취소">주문취소</option>
-                                    <option value="출고거절">출고거절</option>
-                                    <option value="결제대기">결제대기</option>
-                                    <option value="주문완료">주문완료</option>
+                                    <option value="전체">전체</option>
+                                    <option value="반품대기">반품대기</option>
+                                    <option value="반품완료">반품완료</option>
                                 </select>
                             </div>
                     </b-list-group-item>
@@ -30,7 +24,7 @@
 <script>
     var baseurl = "http://freshntech.cafe24.com"
     export default {
-        name: 'HistoryCondition',
+        name: 'RefundHistoryCondition',
         data() {
             return {
                 historyDate: '7',
@@ -39,12 +33,12 @@
         },
         methods: {
             getHistory(){
-                this.$http.get(baseurl + '/order/getOrder/' + this.store.state.customer.id + '?condition=' + this.historyDate)
+                this.$http.get(baseurl + '/order/getRefund/' + this.store.state.customer.id + '?condition=' + this.historyDate)
                 .then((res) => {
-                    
+                    console.log(res);
                     var list = [];
                     if(this.condition === "전체"){
-                        this.store.state.orderHistory = res.data;
+                        this.store.state.requestHistory = res.data;
                         this.$forceUpdate();
                         return;
                     }else{
@@ -54,7 +48,7 @@
                             });
                         }
                     }
-                    this.store.state.orderHistory = list;
+                    this.store.state.requestHistory = list;
                     this.$forceUpdate();
                 })
                 .catch((err) => {

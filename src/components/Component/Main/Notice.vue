@@ -21,13 +21,9 @@
 </template>
 
 <script>
-    import Modal from './Modal'
     var baseurl="http://freshntech.cafe24.com";
     export default {
         name: "Notice",
-        components: {
-            Modal
-        },
         data () {
             return {
                 detail: ''

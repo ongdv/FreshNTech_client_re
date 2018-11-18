@@ -1,17 +1,23 @@
 <template>
     <div>
         <Head headname="반품 내역" />
+        <RefundHistoryCondition />
+        <RefundHistoryList />
     </div>
 </template>
 
 <script>
     import {
-        Head
+        Head,
+        RefundHistoryCondition,
+        RefundHistoryList
     } from '../Component'
     export default {
         name: 'RefundHistory',
         components: {
-            Head
+            Head,
+            RefundHistoryCondition,
+            RefundHistoryList
         }
     }
 </script>

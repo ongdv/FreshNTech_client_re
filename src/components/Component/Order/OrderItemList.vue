@@ -58,7 +58,8 @@
                     this.store.state.orderList = res.data.customerItemList;
                     this.store.state.orderList.forEach(element => {
                         element.qty = 1;
-                        element.amount = element.qty * element.price1;
+                        element.amount = element.price1 * element.qty;
+                        this.$forceUpdate();
                         this.getTotalQty();
                         this.getTotalPrice();
                     });

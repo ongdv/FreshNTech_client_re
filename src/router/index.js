@@ -9,7 +9,8 @@ import {
   Setting,
   Favorite,
   Auth,
-  AddGoods
+  AddGoods,
+  AddFavorite
 } from "../components/Layout/";
 import Hexagon from "@/components/Component/Hexagon"
 import store from '../vuex/store'
@@ -89,6 +90,13 @@ export default new Router({
       path: '/addGoods',
       name: 'AddGoods',
       component: AddGoods,
+      props: true,
+      beforeEnter: requireAuth()
+    },
+    {
+      path: '/addFavorite',
+      name: 'AddFavorite',
+      component: AddFavorite,
       props: true,
       beforeEnter: requireAuth()
     }

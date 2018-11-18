@@ -7,7 +7,7 @@
                         
                         v-on:click="getDetail(item.id)">
                             <div style="width:75%;height:100%;float:left;text-align:left;">
-                                {{item.regdate}}
+                                {{item.orderdate}}
                                 <br>
                                 <span style="width:65%;color:rgba(190,190,190,0.7);">주문금액 {{nwc(item.amount)}} 원</span>
                             </div>
@@ -22,11 +22,12 @@
                                  :header-bg-variant="'success'"
                                  :header-text-variant="'white'"
                                  v-on:ok="cancelOrder(item.id)"
+                                 v-on:cancel="closeModal()"
                         >
                             <div class="w-100 bg-light" style="margin-top:10px;">
                                 <b-list-group class="border-0">
                                     <b-list-group-item class="border-0 bg-light" style="font-weight:bold;">
-                                        {{item.regdate}}<br>
+                                        {{item.orderdate}}<br>
                                         {{item.id}}
                                     </b-list-group-item>
                                     <b-list-group-item v-for="(detailItem, index) in orderDetail" v-bind:key="index">
@@ -114,7 +115,6 @@
                 console.log(id);
                 this.$http.get(baseurl + '/orderdetail/' + id)
                 .then((res) => {
-                    console.log(res);
                     this.orderDetail = res.data;
                     this.detailTotal=0;
                     this.detailQty=0;
@@ -139,6 +139,11 @@
                         console.log(err);
                     })
                 }
+            },
+            closeModal(){
+                    this.detailTotal=0;
+                    this.detailQty=0;
+                    this.orderDetail = "";
             }
         },
         created() {

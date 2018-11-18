@@ -12,7 +12,7 @@
                         <b-dropdown-item href="#" to="statistics">통계</b-dropdown-item>
                         <b-dropdown-item href="#" to="setting">설정</b-dropdown-item>
                     </b-nav-item-dropdown>
-                {{this.store.state.customer.bname}}
+                {{this.store.state.customer.deliverer_bname}}
                 <img src="@/assets/Under_Color.png" class="d-inline-block align-center ml-3" alt="BV" width="35px">
             </b-navbar-brand>
             </b-navbar>
@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        name: 'MainHead'
+        name: 'Head'
     }
 </script>
 

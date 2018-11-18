@@ -7,5 +7,6 @@ import Setting from './Setting.vue';
 import Favorite from './Favorite.vue';
 import Auth from './Auth.vue';
 import AddGoods from './AddGoods.vue';
+import AddFavorite from './AddFavorite';
 
-export  { Main, Order, OrderHistory, RefundHistory, Statistics, Setting, Favorite, Auth, AddGoods };
+export  { Main, Order, OrderHistory, RefundHistory, Statistics, Setting, Favorite, Auth, AddGoods, AddFavorite };

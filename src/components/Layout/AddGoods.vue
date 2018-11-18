@@ -32,6 +32,7 @@
                     this.store.state.goodsList = res.data;
                     this.store.state.goodsList.forEach(element => {
                         element.qty = 1;
+                        element.amount = element.price1 * element.qty;
                         element.check= false
                     })
                     }

@@ -1,27 +1,28 @@
 <template>
     <div>
         <b-list-group flush style="overflow:scroll;height:710px;">
-                <b-list-group-item v-for="(item, index) in this.store.state.orderHistory" :key="index">
+                <b-list-group-item v-for="(item, index) in this.store.state.requestHistory" :key="index">
                     <div>
                         <b-btn v-b-modal="`modal${index}`" class="bg-transparent text-dark border-0 w-100"
                         
                         v-on:click="getDetail(item.id)">
                             <div style="width:75%;height:100%;float:left;text-align:left;">
-                                {{item.regdate}}
+                                <span style="width:65%;font-weight:bold;">반품금액 {{nwc(item.amount)}} 원</span>
                                 <br>
-                                <span style="width:65%;color:rgba(190,190,190,0.7);">주문금액 {{nwc(item.amount)}} 원</span>
+                                <span style="color:rgba(190,190,190,0.7);">반품 접수일 {{item.regdate}}</span>
+                                <br>
+                                <span style="color:rgba(190,190,190,0.7);">주문번호 {{item.id}}</span>
                             </div>
                             <div style="width:25%;float:right;">
                                 <span style="font-weight:bold;" v-bind:style="{ color: styleColor(item.orderstate)}">{{item.orderstate}}</span>
                             </div>
                         </b-btn>
-                        <b-modal :id="`modal${index}`" :title="'주문상세보기'"
-                                 :cancel-title="'닫기'"
-                                 :ok-title="'주문취소'"
+                        <b-modal :id="`modal${index}`" :title="'반품상세보기'"
+                                 :ok-title="'닫기'"
+                                 :ok-only="true"
                                  :modal-ok="true"
                                  :header-bg-variant="'success'"
                                  :header-text-variant="'white'"
-                                 v-on:ok="cancelOrder(item.id)"
                         >
                             <div class="w-100 bg-light" style="margin-top:10px;">
                                 <b-list-group class="border-0">
@@ -67,7 +68,7 @@
 <script>
     var baseurl="http://freshntech.cafe24.com";
     export default {
-        name: 'OrderHistoryList',
+        name: 'RefundHistoryList',
         data () {
             return {
                 orderDetail: '',
@@ -80,33 +81,13 @@
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             },
             styleColor(idx) {
+                console.log(idx);
                 switch(idx){
-                    case '배송예정':
-                        return 'black';
-                        break;
-                    case '배송준비':
+                    case '반품대기':
                         return 'red';
                         break;
-                    case '배송중':
-                        return 'blue';
-                        break;
-                    case '배송완료':
+                    case '반품완료':
                         return 'green';
-                        break;
-                    case '주문접수':
-                        return 'red';
-                        break;
-                    case '주문취소':
-                        return 'lightgray';
-                        break;
-                    case '주문완료':
-                        return 'lightgreen';
-                        break;
-                    case '출고거절':
-                        return 'pink';
-                        break;
-                    case '결제대기':
-                        return 'purple';
                         break;
                 }
             },

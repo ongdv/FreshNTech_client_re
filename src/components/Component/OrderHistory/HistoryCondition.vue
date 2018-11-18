@@ -41,7 +41,7 @@
             getHistory(){
                 this.$http.get(baseurl + '/order/getOrder/' + this.store.state.customer.id + '?condition=' + this.historyDate)
                 .then((res) => {
-                    
+                    console.log(res);
                     var list = [];
                     if(this.condition === "전체"){
                         this.store.state.orderHistory = res.data;
