@@ -2,19 +2,23 @@
     <div>
         <Head headname="즐겨찾기"/>
         <FavoriteList />
+        <FavoriteItemList />
     </div>
 </template>
 
 <script>
+    var baseurl="http://freshntech.cafe24.com";
     import {
         Head,
-        FavoriteList
+        FavoriteList,
+        FavoriteItemList
     } from '../Component'
     export default {
         name: 'Favorite',
         components: {
             Head,
-            FavoriteList
+            FavoriteList,
+            FavoriteItemList
         }
     }
 </script>

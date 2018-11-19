@@ -8,12 +8,13 @@
                 </router-link>
             </div>
         </div>
+        
     </div>
 </template>
 
 <script>
     export default {
-        name: 'FavoriteList'
+        name: 'FavoriteList',
     }
 </script>
 

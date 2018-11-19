@@ -23,7 +23,8 @@ const store = new Vuex.Store({
         orderRequest: '배송 및 상품에 대한 추가 요청사항 입력',
         goodsList: [],
         orderHistory: [],
-        requestHistory: []
+        requestHistory: [],
+        statistics: {}
     }
 })
 

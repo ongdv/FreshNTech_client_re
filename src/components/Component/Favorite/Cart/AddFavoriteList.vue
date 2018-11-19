@@ -85,7 +85,7 @@
                 
                 for(var i=0; i<this.store.state.goodsList.length;i++){
                     if(this.store.state.goodsList[i].check === true){
-                        let test = this.store.state.orderList.findIndex((item) => {
+                        let test = this.store.state.favorite.findIndex((item) => {
                             return item.id === this.store.state.goodsList[i].id;
                         })
                         console.log(test)
@@ -96,12 +96,12 @@
                         this.store.state.goodsList[i].qty=1;
                         this.store.state.goodsList[i].amount=this.store.state.goodsList[i].price1;
                         console.log(this.store.state.goodsList[i]);
-                        this.store.state.orderList.push(this.store.state.goodsList[i]);
-                        
+                        this.store.state.favorite.push(this.store.state.goodsList[i]);
+                        this.$forceUpdate();
                     }
                 }
-                console.log(this.store.state.orderList);
-                this.$router.push('order')
+                console.log(this.store.state.favorite);
+                this.$router.push('favorite')
             }
         },
     }

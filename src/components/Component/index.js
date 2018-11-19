@@ -35,12 +35,18 @@ import RefundHistoryCondition from './RefundHistory/RefundHistoryCondition.vue';
 import RefundHistoryList from './RefundHistory/RefundHistoryList.vue';
 
 //Favorite
-import FavoriteList from './Favorite/FavoriteList';
+import FavoriteList from './Favorite/FavoriteList.vue';
+import FavoriteItemList from './Favorite/FavoriteItemList.vue';
 
 //FavoriteCart
-import FavoriteSearchCondition from './Favorite/Cart/FavoriteSearchCondition.vue'
+import FavoriteSearchCondition from './Favorite/Cart/FavoriteSearchCondition.vue';
 import FavoriteHead from './Favorite/Cart/FavoriteHead.vue';
-import AddFavoriteList from './Favorite/Cart/AddFavoriteList.vue'
+import AddFavoriteList from './Favorite/Cart/AddFavoriteList.vue';
+
+//Statistics
+import StatisticsStringCondition from './Statistics/StatisticsStringCondition.vue';
+import StatisticsDateCondition from './Statistics/StatisticsDateCondition';
+import StatisticsList from './Statistics/StatisticsList'
 
 export {
     Login,
@@ -68,5 +74,9 @@ export {
     FavoriteList,
     FavoriteSearchCondition,
     FavoriteHead,
-    AddFavoriteList
+    AddFavoriteList,
+    FavoriteItemList,
+    StatisticsStringCondition,
+    StatisticsDateCondition,
+    StatisticsList
 };
